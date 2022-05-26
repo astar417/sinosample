@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<meta name="description" content=""/>
+<meta name="author" content=""/>
+<title>南科屏東園區儀表板</title>
+<!--favicon-->
+<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+<!-- notifications css -->
+<link rel="stylesheet" href="assets/plugins/notifications/css/lobibox.min.css"/>
+<!-- Vector CSS -->
+<link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
+<!-- simplebar CSS-->
+<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
+<!-- Bootstrap core CSS-->
+<link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- animate CSS-->
+<link href="assets/css/animate.css" rel="stylesheet" type="text/css"/>
+<!-- Icons CSS-->
+<link href="assets/css/icons.css" rel="stylesheet" type="text/css"/>
+<!-- Sidebar CSS-->
+<link href="assets/css/sidebar-menu.css" rel="stylesheet"/>
+<!-- Custom Style-->
+<link href="assets/css/app-style.css" rel="stylesheet"/>
+</head>
+<body onload="info_noti()">
+<!-- Start wrapper-->
+<div id="wrapper">
+    <!--Start topbar header-->
+  <header class="topbar-nav">
+    <nav class="navbar navbar-expand fixed-top bg-dark">
+      <ul class="navbar-nav mr-auto align-items-center">
+        
+        <li class="nav-item">
+            <div class="brand-logo"><a href="index3.html"><img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+      <h5 class="logo-text">南科屏東園區儀表板</h5>
+      </a></div>
+        </li>
+      </ul>
+        <ul class="navbar-nav align-items-center right-nav-link">
+        <li class="nav-item dropdown-lg pr-3"><a href="index01.html"><i aria-hidden="true" class="fa fa-bus"></i>
+      <h5 class="logo-text">智慧交通</h5></a></li>
+        <li class="nav-item dropdown-lg pr-3"><a href="index02.html"><i aria-hidden="true" class="fa fa-industry"></i>
+      <h5 class="logo-text">智慧治理</h5></a></li>
+        <li class="nav-item dropdown-lg pr-3"><a href="index03.html"><i aria-hidden="true" class="fa fa-tree"></i>
+      <h5 class="logo-text">智慧永續</h5></a></li>
+      </ul>
+    </nav>
+  </header>
+  <!--End topbar header-->
+  <div class="clearfix"></div>
+  <div class="content-wrapper">
+    <div class="container-fluid"><!--Start Dashboard Content-->
+      <div class="row mt-4">
+        <div class="col-12 col-lg-6 col-xl-3">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <div class="media">
+                <div class="media-body text-left">
+                  <h4 class="text-purple-light">4,530</h4>
+                  <span class="text-white">汙水排放量(百萬立方公尺)</span></div>
+                <div class="align-self-center"><span id="dash3-chart-1"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="col-12 col-lg-6 col-xl-3">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <div class="media">
+                <div class="media-body text-left">
+                  <h4 class="text-info">7,850</h4>
+                  <span class="text-white">總用水量(百萬立方公尺)</span></div>
+                <div class="align-self-center"><span id="dash3-chart-3"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 col-xl-3">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <div class="media">
+                <div class="media-body text-left">
+                  <h4 class="text-danger">2,500</h4>
+                  <span class="text-white">總用電量(萬瓩)</span></div>
+                <div class="align-self-center"><span id="dash3-chart-2"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-lg-6 col-xl-3">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <div class="media">
+                <div class="media-body text-left">
+                  <h4 class="text-success">1,200</h4>
+                  <span class="text-white">綠能裝置容量(MW)</span></div>
+                <div class="align-self-center"><span id="dash3-chart-4"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End Row-->
+        
+      <div class="row">
+        <div class="col-12 col-lg-6 col-xl-6">
+          <div class="card bg-dark pb-3">
+            <div class="card-header bg-transparent text-white">園區開發狀態
+            </div>
+            <div class="card-body">
+              <div id="dashboard-map" style="height: 210px"></div>
+              <p class="text-white">A區塊 <span class="float-right">50%</span></p>
+              <div class="progress" style="height: 5px;">
+                <div class="progress-bar gradient-royal" role="progressbar" style="width: 50%"></div>
+              </div>
+              <p class="text-white mt-3">B區塊 <span class="float-right">65%</span></p>
+              <div class="progress" style="height: 5px;">
+                <div class="progress-bar gradient-ibiza" role="progressbar" style="width: 65%"></div>
+              </div>
+              <p class="text-white mt-3">C區塊 <span class="float-right">85%</span></p>
+              <div class="progress" style="height: 5px;">
+                <div class="progress-bar gradient-meridian" role="progressbar" style="width: 85%"></div>
+              </div>
+              <p class="text-white mt-3">D區塊 <span class="float-right">75%</span></p>
+              <div class="progress" style="height: 5px;">
+                <div class="progress-bar gradient-orange" role="progressbar" style="width: 75%"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+         <div class="col-12 col-lg-6 col-xl-6"> 
+         <div class="card-group">
+        <div class="card bg-dark border-right border-secondary-light">
+          <div class="card-header bg-transparent text-white">土地使用情形(公頃)
+          </div>
+          <div class="card-body">
+            <canvas id="dash3-chart-16" height="180"></canvas>
+          </div>
+          <ul class="list-group list-group-flush list shadow-none list-group-dark">
+            <li class="list-group-item d-flex justify-content-between align-items-center">可出租土地面積 <span class="badge gradient-purpink text-white badge-pill shadow">50</span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">已出租土地面積 <span class="badge gradient-orange             text-white badge-pill shadow">25</span></li>
+
+          </ul>
+        </div>
+        <div class="card bg-dark border-right border-secondary-light">
+          <div class="card-header bg-transparent text-white"> 標準廠房使用情形(單位數)
+
+          </div>
+          <div class="card-body">
+            <canvas id="dash3-chart-17" height="180"></canvas>
+          </div>
+          <ul class="list-group list-group-flush list shadow-none list-group-dark">
+            <li class="list-group-item d-flex justify-content-between align-items-center">可出租 <span class="badge gradient-quepal text-white badge-pill shadow">220</span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">已出租 <span class="badge gradient-violet             text-white badge-pill shadow">500</span></li>
+<!--            <li class="list-group-item d-flex justify-content-between align-items-center">Expense <span class="badge gradient-ibiza text-white badge-pill shadow">07</span></li>-->
+          </ul>
+        </div>
+        <div class="card bg-dark">
+          <div class="card-header bg-transparent text-white"> 園區開發情形(公頃)
+
+          </div>
+          <div class="card-body">
+            <canvas id="dash3-chart-18" height="180"></canvas>
+          </div>
+          <ul class="list-group list-group-flush list shadow-none list-group-dark">
+            <li class="list-group-item d-flex justify-content-between align-items-center">已開發 <span class="badge gradient-knight text-white badge-pill shadow">10</span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">開發中 <span class="badge gradient-dusk             text-white badge-pill shadow">25</span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">待開發 <span class="badge gradient-yoda text-white badge-pill shadow">40</span></li>
+          </ul>
+        </div>
+      </div>
+         <div class="card bg-dark">
+            <div class="card-body">
+              <div class="media">
+                <div class="align-self-center"><span id="dash3-chart-15"></span></div>
+                <div class="media-body text-right">
+                  <h4 class="text-warning">10 %</h4>
+                  <span class="text-white">平均開發比率</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--End Row-->  
+
+
+
+      <div class="row">
+        <div class="col-12 col-lg-6 col-xl-6">
+          <div class="card bg-dark">
+            <div class="card-header bg-transparent text-white"> 產業類別及家數(家)
+
+            </div>
+            <div class="card-body">
+              <canvas id="dash3-chart-6"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 col-xl-6">
+          <div class="card bg-dark">
+            <div class="card-header bg-transparent text-white">本日園區總用電量(萬瓩)
+              <div class="card-action">
+                <div class="dropdown"><a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown"><i class="icon-options text-white"></i></a>
+                  <div class="dropdown-menu animated fadeIn dropdown-menu-right"><a class="dropdown-item" href="javascript:void();">Action</a><a class="dropdown-item" href="javascript:void();">Another action</a><a class="dropdown-item" href="javascript:void();">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="javascript:void();">Separated link</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <canvas id="dash3-chart-7"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End Row-->
+
+      <div class="row">
+        <div class="col-12 col-lg-12 col-xl-12">
+          <div class="card bg-dark">
+            <div class="card-header bg-transparent text-white"> 廢水排放量/耗水量(頓)
+            </div>
+            <div class="card-body">
+              <canvas id="dash3-chart-5" height="100"></canvas>
+              <div class="row">
+                <div class="col-12">
+                  <div class="card bg-transparent shadow-none mb-0">
+                    <div class="card-content">
+                      <div class="row row-group m-0">
+                        <div class="col-12 col-lg-6 col-xl-4 border-secondary-light">
+                          <div class="card-body text-center">
+                            <h3 class="text-danger">1,432,470</h3>
+                            <span class="text-white">總取水量</span></div>
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-4 border-secondary-light">
+                          <div class="card-body text-center">
+                            <h3 class="text-warning">117,451</h3>
+                            <span class="text-white">總廢水量</span></div>
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-4 border-secondary-light">
+                          <div class="card-body text-center">
+                            <h3 class="text-success">1,315,019</h3>
+                            <span class="text-white">耗水量</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--End Row--></div>
+          </div>
+        </div>
+      </div>
+      <!--End Row-->
+        <div class="row">  
+        <div class="col-12 col-lg-12 col-xl-12">
+          <div class="card bg-dark">
+            <div class="card-header bg-transparent text-white border-0">停車場使用量分析
+
+            </div>
+            <div class="table-responsive">
+              <table class="table table-dark align-items-center table-flush">
+                <thead>
+                  <tr>
+                    <th>停車場</th>
+                    <th>總數量</th>  
+                    <th>滿格率(%)</th>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>A區</td>
+                  <td>100</td>
+                  <td>80 <span class="ml-3" id="dash3-chart-8"></span></td>
+                </tr>
+                <tr>
+                  <td>B區</td>
+                  <td>80</td>
+                  <td>56 <span class="ml-3" id="dash3-chart-9"></span></td>
+                </tr>
+                <tr>
+                  <td>C區</td>
+                  <td>50</td>
+                  <td>77 <span class="ml-3" id="dash3-chart-10"></span></td>
+                </tr>
+                <tr>
+                  <td>D區</td>
+                  <td>250</td>
+                  <td>95 <span class="ml-3" id="dash3-chart-11"></span></td>
+                </tr>
+                <tr>
+                  <td>E區</td>
+                  <td>100</td>
+                  <td>62 <span class="ml-3" id="dash3-chart-12"></span></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+        </div> 
+        </div>
+      <!--End Row--> 
+      <!--End Dashboard Content--></div>
+    <!-- End container-fluid--></div>
+  <!--End content-wrapper--><!--Start Back To Top Button--><a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i></a><!--End Back To Top Button--><!--Start footer-->
+  <footer class="footer">
+    <div class="container">
+      <div class="text-center"> Copyright © 2022 Sinotech</div>
+    </div>
+  </footer>
+  <!--End footer--></div>
+<!--End wrapper--><!-- Bootstrap core JavaScript--><script src="assets/js/jquery.min.js"></script><script src="assets/js/popper.min.js"></script><script src="assets/js/bootstrap.min.js"></script><!-- simplebar js --><script src="assets/plugins/simplebar/js/simplebar.js"></script><!-- waves effect js --><script src="assets/js/waves.js"></script><!-- sidebar-menu js --><script src="assets/js/sidebar-menu.js"></script><!-- Custom scripts --><script src="assets/js/app-script.js"></script><!-- Vector map JavaScript --><script src="assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script><script src="assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script><!-- Sparkline JS --><script src="assets/plugins/sparkline-charts/jquery.sparkline.min.js"></script><!-- Chart js --><script src="assets/plugins/Chart.js/Chart.min.js"></script><!--notification js --><script src="assets/plugins/notifications/js/lobibox.min.js"></script><script src="assets/plugins/notifications/js/notifications.min.js"></script><!-- Index js --><script src="assets/js/index3.js"></script>
+</body>
+</html>
